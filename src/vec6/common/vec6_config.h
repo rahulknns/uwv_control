@@ -35,6 +35,7 @@
 #define DEPTH_TOPIC               "/vec6/sim_depth"
 #define IMU_TOPIC                 "/vec6/sim_imu"
 #define BOUNDING_BOX_TOPIC        "/darknet_ros/bounding_boxes"
+#define PWM_TOPIC                 "/vec6/pwm"
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
