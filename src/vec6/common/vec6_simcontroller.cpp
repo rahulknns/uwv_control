@@ -55,16 +55,16 @@ void Vec6SimController::vectoredPid2Effort(double _pid_surge, double _pid_yaw, d
 		return;
   	}
 
-effort_.effort[F_PORT] = ((1-state_.beta_)/2)*state_.sys_mat_[0][0]*_pid_surge + state_.beta_*state_.sys_mat_[1][0]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][0]*_pid_sway;
-effort_.effort[F_STAR] = ((1-state_.beta_)/2)*state_.sys_mat_[0][1]*_pid_surge + state_.beta_*state_.sys_mat_[1][1]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][1]*_pid_sway;
-effort_.effort[B_PORT] = ((1-state_.beta_)/2)*state_.sys_mat_[0][2]*_pid_surge + state_.beta_*state_.sys_mat_[1][2]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][2]*_pid_sway;
-effort_.effort[B_STAR] = ((1-state_.beta_)/2)*state_.sys_mat_[0][3]*_pid_surge + state_.beta_*state_.sys_mat_[1][3]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][3]*_pid_sway;
-    
-// limiting thrust
-if(effort_.effort[F_PORT] > state_.max_thrust_) effort_.effort[F_PORT] = state_.max_thrust_ - 8; 
-if(effort_.effort[F_STAR] > state_.max_thrust_) effort_.effort[F_STAR] = state_.max_thrust_ - 8;
-if(effort_.effort[B_PORT] > state_.max_thrust_) effort_.effort[B_PORT] = state_.max_thrust_ - 8;
-if(effort_.effort[B_STAR] > state_.max_thrust_) effort_.effort[B_STAR] = state_.max_thrust_ - 8;
+	effort_.effort[F_PORT] = ((1-state_.beta_)/2)*state_.sys_mat_[0][0]*_pid_surge + state_.beta_*state_.sys_mat_[1][0]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][0]*_pid_sway;
+	effort_.effort[F_STAR] = ((1-state_.beta_)/2)*state_.sys_mat_[0][1]*_pid_surge + state_.beta_*state_.sys_mat_[1][1]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][1]*_pid_sway;
+	effort_.effort[B_PORT] = ((1-state_.beta_)/2)*state_.sys_mat_[0][2]*_pid_surge + state_.beta_*state_.sys_mat_[1][2]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][2]*_pid_sway;
+	effort_.effort[B_STAR] = ((1-state_.beta_)/2)*state_.sys_mat_[0][3]*_pid_surge + state_.beta_*state_.sys_mat_[1][3]*_pid_yaw + ((1-state_.beta_)/2)*state_.sys_mat_[2][3]*_pid_sway;
+		
+	// limiting thrust
+	if(effort_.effort[F_PORT] > state_.max_thrust_) effort_.effort[F_PORT] = state_.max_thrust_ - 8; 
+	if(effort_.effort[F_STAR] > state_.max_thrust_) effort_.effort[F_STAR] = state_.max_thrust_ - 8;
+	if(effort_.effort[B_PORT] > state_.max_thrust_) effort_.effort[B_PORT] = state_.max_thrust_ - 8;
+	if(effort_.effort[B_STAR] > state_.max_thrust_) effort_.effort[B_STAR] = state_.max_thrust_ - 8;
 
 }
 
