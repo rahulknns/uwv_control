@@ -14,9 +14,6 @@ void readInput(void){
         g_vec6.allThrustersStop();
         g_do_not_quit = false;
         break;
-      case 'Z':
-        displayHelp();
-        break;
 
       // Start/stop traversing
       case 't':
@@ -137,6 +134,10 @@ int main(int argc, char** argv)
 
   // initialize the underwater vehicle controller
   g_vec6.initController(nh, 40, 0.4);
+
+  initscr();
+  raw();
+  noecho();
 
   displayHelp();
 
