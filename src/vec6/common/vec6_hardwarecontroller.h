@@ -57,6 +57,10 @@ public:
 	 */
 	void vectoredPid2Effort(double _pid_yaw, double _pid_surge, double _pid_sway) override;
 
+    /**
+	 * @brief converts effort to PWM
+	 */
+    void effort2PWM();
 	/**
 	 * @brief Publishes the commands
 	 */ 

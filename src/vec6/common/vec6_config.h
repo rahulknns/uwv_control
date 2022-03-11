@@ -49,6 +49,10 @@
 /// @brief Total number of thrusters present in vec6
 #define THRUSTER_NUM 6
 
+/// @brief PWM Configurations
+#define ZERO_THRUST_PWM 1500
+#define MAX_THRUST_PWM  1900
+
 /// @brief Thruster location and index mapping
 #define F_PORT 0 
 #define F_STAR 1
