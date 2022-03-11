@@ -3,7 +3,7 @@
 void Vec6Comms::initComms(ros::NodeHandle &_node, Vec6State& _vec6state){
 	// Initialize publishers
 	effort_pub_ = _node.advertise<sensor_msgs::JointState>(effort_topic_, 1);
-	pwm_pub_    = _node.advertise<vec6::floatMultiArray>(pwm_topic_,1);
+	pwm_pub_    = _node.advertise<uwv_control::floatMultiArray>(pwm_topic_,1);
 
 
   	// Initialize and check for subscription

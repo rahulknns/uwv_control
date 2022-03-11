@@ -7,6 +7,7 @@
 #include <geometry_msgs/PointStamped.h>
 #include <sensor_msgs/Imu.h>
 #include <sensor_msgs/JointState.h>
+#include "uwv_control/floatMultiArray.h"
 
 #include "vec6_config.h"
 #include "vec6_controller.h"
@@ -22,6 +23,8 @@ public:
 
 	/// @brief Effort message
 	sensor_msgs::JointState effort_;
+	uwv_control::floatMultiArray pwm_;
+	
 
 	/**
 	 * @brief Initializes the controller and the variables.
