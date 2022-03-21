@@ -78,20 +78,18 @@ void Vec6HardwareController::sendCommands(void){
 
 void Vec6HardwareController::allThrustersStop(void)
 {
-  effort_.effort[F_PORT] = 0;
-  effort_.effort[F_STAR] = 0;
-  effort_.effort[M_PORT] = 0;
-  effort_.effort[M_STAR] = 0;
-  effort_.effort[B_PORT] = 0;
-  effort_.effort[B_STAR] = 0;
+  state_.is_traversing_ = false;
+  for (int i = 0; i < THRUSTER_NUM; i++)
+  {
+	  effort_.effort[i] = manual_effort[i];
+  }
 }
 
 void Vec6HardwareController::setEffort(double *_manual_effort)
 {
-  effort_.effort[F_PORT] = _manual_effort[F_PORT];
-  effort_.effort[F_STAR] = _manual_effort[F_STAR];
-  effort_.effort[M_PORT] = _manual_effort[M_PORT];
-  effort_.effort[M_STAR] = _manual_effort[M_STAR];
-  effort_.effort[B_PORT] = _manual_effort[B_PORT];
-  effort_.effort[B_STAR] = _manual_effort[B_STAR];
+  for (int i = 0; i < THRUSTER_NUM; i++)
+  {
+	  effort_.effort[i] = manual_effort[i];
+  }
+  
 }

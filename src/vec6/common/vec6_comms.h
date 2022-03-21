@@ -11,7 +11,7 @@
 #include <geometry_msgs/PointStamped.h>
 #include <sensor_msgs/Imu.h>
 #include <sensor_msgs/JointState.h>
-#include "uwv_control/floatMultiArray.h"
+#include <std_msgs/Float32MultiArray.h>
 
 #ifdef USE_DARKNET
 #include "darknet_ros_msgs/BoundingBoxes.h"

@@ -155,7 +155,7 @@ int main(int argc, char** argv)
   // main loop
   while (g_do_not_quit && ros::ok())
   {
-    g_vec6.checkPidThread();
+    g_vec6.checkPidThread();                  
     ros::spinOnce();
   }
 

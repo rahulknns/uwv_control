@@ -195,28 +195,20 @@ void Vec6Controller::run(){
   // Check if thread is requested to stop
   while (stopRequested() == false)
   {
-    if (!manual_control_enable_)
-    {
-      cur_time = ros::Time::now().toSec();
+    cur_time = ros::Time::now().toSec();
 
-      dt = cur_time - prev_time;
+    dt = cur_time - prev_time;
 
-      // sanity check
-      if (dt <= 0)
-        continue;
-      heavePid2Effort(depth_controller_.update(state_.set_loc_.z, state_.cur_loc_.z, dt));
-      vectoredPid2Effort(state_.set_loc_.x,
-                        yaw_controller_.update(state_.set_orient_.yaw, state_.cur_orient_.yaw, dt),
-                        state_.set_loc_.y);
-      sendCommands();
+    // sanity check
+    if (dt <= 0)
+      continue;
+    heavePid2Effort(depth_controller_.update(state_.set_loc_.z, state_.cur_loc_.z, dt));
+    vectoredPid2Effort(state_.set_loc_.x,
+                       yaw_controller_.update(state_.set_orient_.yaw, state_.cur_orient_.yaw, dt),
+                       state_.set_loc_.y);
+    sendCommands();
 
-      prev_time = cur_time;
-    }
-    else
-    {
-      sendCommands();
-    }
-    
+    prev_time = cur_time;
   }
   ROS_INFO_STREAM("PID controller thread stopped.");
 }

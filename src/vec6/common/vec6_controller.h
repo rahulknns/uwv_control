@@ -21,8 +21,6 @@ public:
   /// @brief Instance holding the vec6 vehicle's state
   Vec6State state_;
 
-  /// @brief Variable to  toggle between PID Controller and manual controller
-  bool manual_control_enable_ = False;
   /// @brief Depth controller
   PidTranslate depth_controller_;
 
