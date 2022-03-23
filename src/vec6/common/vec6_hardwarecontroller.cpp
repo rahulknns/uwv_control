@@ -66,14 +66,14 @@ void Vec6HardwareController::vectoredPid2Effort(double _pid_surge, double _pid_y
 }
 
 //converts effort to PWM
-void Vec6HardwareController::effort2PWM()){
+void Vec6HardwareController::effort2PWM(){
 	for(int i = 0, i < THRUSTER_NUM, i++)
 		pwm.values[i] = ZERO_THRUST_PWM + ( (effort_.effort[i]/max_thrust_) * (MAX_THRUST_PWM - ZERO_THRUST_PWM ) );
 
 }
 void Vec6HardwareController::sendCommands(void){
   effort2PWM();
-  pwm_pub_.publish(pwm_);
+  vec6Comms.pwm_pub_.publish(pwm_);
 }
 
 void Vec6HardwareController::allThrustersStop(void)
