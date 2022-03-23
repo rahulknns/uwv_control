@@ -1,6 +1,8 @@
 set(TASK_DEF_SRC_FILES tasks.cpp
 					   sim_task_list.cpp
-					   auv_3_0_testing_task_list.cpp)
+					   )
+set(TASK_DEF_SRC_FILES_AUV_3_0  tasks.cpp
+								auv_3_0_testing_task_list.cpp)
 
 add_executable(sim_sampletasks_exe  ${COMMON_SRC_FILES}
 									${COMMON_VEC6_SIM_FILES}
@@ -9,7 +11,7 @@ add_executable(sim_sampletasks_exe  ${COMMON_SRC_FILES}
 
 add_executable(auv_3_0_testing_tasks_exe  ${COMMON_SRC_FILES}
 									${COMMON_VEC6_HARDWARE_FILES}
-									${TASK_DEF_SRC_FILES}
+									${TASK_DEF_SRC_FILES_AUV_3_0}
 									auv_3_0_testing_tasks_exe.cpp)
 			
 
