@@ -12,7 +12,7 @@
 #include <csignal>
 
 /// @brief Instance of the underwater vehicle (UWV)'s controller
-Vec6SimController g_vec6;
+Vec6HardwareController g_vec6;
 
 
 /**
