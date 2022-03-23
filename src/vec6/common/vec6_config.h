@@ -52,6 +52,7 @@
 /// @brief PWM Configurations
 #define ZERO_THRUST_PWM 1500
 #define MAX_THRUST_PWM  1900
+#define MAX_THRUST        40
 
 /// @brief Thruster location and index mapping
 #define F_PORT 0 
