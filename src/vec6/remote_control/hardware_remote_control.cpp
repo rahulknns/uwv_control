@@ -1,4 +1,4 @@
-#include "sim_remote_control.h"
+#include "hardware_remote_control.h"
 
 void readInput(void){
   char input;
@@ -129,15 +129,16 @@ int main(int argc, char** argv)
   ros::init(argc, argv, NODE_NAME);
   ros::NodeHandle nh;
 
+  initscr();
+  raw();
+  noecho();
   // register a signal handler to ensure that node is exited properly
   signal(SIGINT, signalHandler);
 
   // initialize the underwater vehicle controller
   g_vec6.initController(nh, 40, 0.4);
 
-  initscr();
-  raw();
-  noecho();
+  
 
   displayHelp();
 
@@ -161,14 +162,13 @@ int main(int argc, char** argv)
 
   // call this before ending the node
   g_vec6.checkPidThread();
-
+  endwin();
   ROS_INFO_STREAM("Sayonara.");
 }
 
 // signal handler
 void signalHandler(int signum)
 {
-   g_vec6.state_.is_traversing_ = false;
-   g_vec6.checkPidThread();
+   clear();
   endwin();
 }

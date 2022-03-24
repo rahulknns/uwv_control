@@ -23,23 +23,7 @@ class HardwareTasks : public Tasks{
 /**
  * @brief Class defining the procedure to accomplish SAUVC task 1
  */ 
-class SauvcTask1 : public HardwareTasks{
-    public:
-    /**
-     * @brief Constructor
-     * 
-     * @param _controller Reference to the controller in use
-     */ 
-    SauvcTask1(Vec6HardwareController &_controller){
-        vec6_ = &_controller;
-    }
 
-
-	/**
-	 * @brief Task 1 execution algorithm
-	 */ 
-	void execute() override;
-};
 
 /**
  * @brief Class defining a sample task.
