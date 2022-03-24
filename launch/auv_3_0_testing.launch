@@ -1,0 +1,15 @@
+<launch>
+<node name = "arduino"
+      pkg  = "rosserial_arduino"
+      type = "serial_node.py"
+      args = " _port:=/dev/ttyUSB0"/>
+<node name = "auv_3_0_testing"
+      pkg  = "uwv_control"
+      type = "auv_3_0_testing_tasks_exe"
+    output = "screen" />
+
+<!-- node name = "teensy"
+      pkg  = "rosserial_arduino"
+      type = "serial_node.py"
+      args = " _port:=/dev/ttyACM0"/ !-->
+</launch>

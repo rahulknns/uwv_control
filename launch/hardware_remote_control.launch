@@ -1,0 +1,3 @@
+<launch>
+  <node name="remote_control" pkg="uwv_control" type="hardware_remote_control" />
+</launch>
