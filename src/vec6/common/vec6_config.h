@@ -32,8 +32,8 @@
 
 /// Message Topics
 #define THRUSTER_EFFORT_TOPIC     "/vec6/thruster_command"
-#define DEPTH_TOPIC               "/vec6/sim_depth"
-#define IMU_TOPIC                 "/vec6/sim_imu"
+#define DEPTH_TOPIC               "/vec6/depth"
+#define IMU_TOPIC                 "/vec6/imu"
 #define BOUNDING_BOX_TOPIC        "/darknet_ros/bounding_boxes"
 #define PWM_TOPIC                 "/vec6/pwm"
 

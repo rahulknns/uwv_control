@@ -25,6 +25,7 @@ int main(int argc, char** argv)
 
   // execute all the tasks in the pipeline
   while(!tq.pipeline_.empty()){
+    g_vec6.state_.is_traversing_ = true;
     tq.executeFirstTask();
   }
 
