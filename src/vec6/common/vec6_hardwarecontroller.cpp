@@ -7,10 +7,13 @@ void Vec6HardwareController::initController(ros::NodeHandle& _node, double _max_
 
 	effort_.name.resize(THRUSTER_NUM);
 	effort_.effort.resize(THRUSTER_NUM);
+	pwm_.data.resize(THRUSTER_NUM);
+
 	for (int i = 0; i < THRUSTER_NUM; i++)
 	{
 		effort_.effort[i] = 0.0;
 	}
+	
 	effort_.name[F_PORT] = "f_port";
 	effort_.name[F_STAR] = "f_star";
 	effort_.name[M_PORT] = "m_port";
