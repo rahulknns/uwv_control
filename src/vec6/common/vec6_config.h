@@ -47,7 +47,7 @@
 #define RAD2DEG 57.2957795131
 
 /// @brief Total number of thrusters present in vec6
-#define THRUSTER_NUM 6
+#define THRUSTER_NUM 4
 
 /// @brief PWM Configurations
 #define ZERO_THRUST_PWM 1500
